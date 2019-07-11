@@ -24,7 +24,7 @@ class SubscribeSuperconfig < CloudConfigTest
     <adminserver hostalias="node1" />
   </admin>
 
-  <jdisc id="#{jdisc_id}" version="1.0">
+  <container id="#{jdisc_id}" version="1.0">
     <search />
     <aliases>
       <endpoint-alias>#{endpoint_alias}</endpoint-alias>
