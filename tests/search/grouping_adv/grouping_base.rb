@@ -245,13 +245,25 @@ module GroupingBase
 
   def querytest_groups_for_default_value(streaming=false)
     classifier = streaming ? 'streaming' : 'indexed'
-    check_query("all(group(n)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-int-group.json")
-    check_query("all(group(to)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-long-group.json")
-    check_query("all(group(f)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-float-group.json")
-    check_query("all(group(d)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-double-group.json")
-    check_query("all(group(s)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-string-group.json")
-    check_query("all(group(boool)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-bool-group.json")
-    check_query("all(group(by)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-byte-group.json")
+    query_group_on_all_singlevalue_types = "all(" +
+      "all(group(n)each(each(output(summary()))))" +
+      "all(group(to)each(each(output(summary()))))" +
+      "all(group(f)each(each(output(summary()))))" +
+      "all(group(d)each(each(output(summary()))))" +
+      "all(group(s)each(each(output(summary()))))" +
+      "all(group(boool)each(each(output(summary()))))" +
+      "all(group(by)each(each(output(summary()))))" +
+      ")"
+    check_query(query_group_on_all_singlevalue_types, "#{selfdir}/default-values/#{classifier}-default-value-groups.json")
+    # check_query("all(group(n)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-int-group.json")
+    # check_query("all(group(to)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-long-group.json")
+    # check_query("all(group(f)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-float-group.json")
+    # check_query("all(group(d)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-double-group.json")
+    # check_query("all(group(s)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-string-group.json")
+    # check_query("all(group(boool)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-bool-group.json")
+    # check_query("all(group(by)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-byte-group.json")
+
+    # check_query("all(group(n)each(each(output(summary()))))", "#{selfdir}/default-values/#{classifier}-default-int-group.json")
   end
 
   def check_query_default_max(select, file, default_max_groups, default_max_hits)
