@@ -244,13 +244,13 @@ module GroupingBase
   end
 
   def querytest_groups_for_default_value
-    check_query("all(group(n)each(output(count())))", "#{selfdir}/default-values/default-int-group.json")
-    check_query("all(group(to)each(output(count())))", "#{selfdir}/default-values/default-long-group.json")
-    check_query("all(group(f)each(output(count())))", "#{selfdir}/default-values/default-float-group.json")
-    check_query("all(group(d)each(output(count())))", "#{selfdir}/default-values/default-double-group.json")
-    check_query("all(group(s)each(output(count())))", "#{selfdir}/default-values/default-string-group.json")
-    check_query("all(group(boool)each(output(count())))", "#{selfdir}/default-values/default-bool-group.json")
-    check_query("all(group(by)each(output(count())))", "#{selfdir}/default-values/default-byte-group.json")
+    check_query("all(group(n)each(each(output(summary()))))", "#{selfdir}/default-values/default-int-group.json")
+    check_query("all(group(to)each(each(output(summary()))))", "#{selfdir}/default-values/default-long-group.json")
+    check_query("all(group(f)each(each(output(summary()))))", "#{selfdir}/default-values/default-float-group.json")
+    check_query("all(group(d)each(each(output(summary()))))", "#{selfdir}/default-values/default-double-group.json")
+    check_query("all(group(s)each(each(output(summary()))))", "#{selfdir}/default-values/default-string-group.json")
+    check_query("all(group(boool)each(each(output(summary()))))", "#{selfdir}/default-values/default-bool-group.json")
+    check_query("all(group(by)each(each(output(summary()))))", "#{selfdir}/default-values/default-byte-group.json")
   end
 
   def check_query_default_max(select, file, default_max_groups, default_max_hits)
