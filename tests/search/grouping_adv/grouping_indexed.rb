@@ -86,7 +86,7 @@ class GroupingIndexed < IndexedSearchTest
 
   def test_groups_for_default_value
     set_owner("bjorncs")
-    deploy_app(singlenode_streaming_2storage("#{selfdir}/test.sd"))
+    deploy_app(singlenode_2cols_realtime(selfdir+"test.sd").threads_per_search(1))
     start
     feed_and_wait_for_docs('test', 2, :file => "#{selfdir}/default-values/docs.json")
     querytest_groups_for_default_value
