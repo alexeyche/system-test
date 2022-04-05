@@ -27,11 +27,19 @@
             "label": "boool",
             "children": [
               {
-                "id": "group:bool:false",
+                "id": "group:bool:true",
                 "relevance": 4814.61700663273,
+                "value": "true",
+                "fields": {
+                  "count()": 1
+                }
+              },
+              {
+                "id": "group:bool:false",
+                "relevance": "-Infinity",
                 "value": "false",
                 "fields": {
-                  "count()": 2
+                  "count()": 1
                 }
               }
             ]
