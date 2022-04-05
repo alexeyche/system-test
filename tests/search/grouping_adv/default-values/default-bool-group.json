@@ -22,22 +22,22 @@
         },
         "children": [
           {
-            "id": "grouplist:boool",
+            "id": "grouplist:by",
             "relevance": 1.0,
-            "label": "boool",
+            "label": "by",
             "children": [
               {
-                "id": "group:bool:true",
+                "id": "group:long:94",
                 "relevance": 4814.61700663273,
-                "value": "true",
+                "value": "94",
                 "fields": {
                   "count()": 1
                 }
               },
               {
-                "id": "group:bool:false",
+                "id": "group:long:-128",
                 "relevance": "-Infinity",
-                "value": "false",
+                "value": "-128",
                 "fields": {
                   "count()": 1
                 }
