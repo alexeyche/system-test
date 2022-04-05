@@ -50,7 +50,7 @@ class GroupingStreaming < StreamingSearchTest
     deploy_app(singlenode_streaming_2storage(selfdir+"test.sd"))
     start
     feed_and_wait_for_docs('test', 2, :file => "#{selfdir}/default-values/docs.json")
-    querytest_groups_for_default_value
+    querytest_groups_for_default_value(true)
   end
 
 end
