@@ -1,0 +1,7 @@
+[
+  { "put":"id:test:test::no-fields", "fields": {} },
+  { "put":"id:test:test::all-fields", "fields": {
+    "s":"aaa", "sf":3.9, "f":3.9, "d":3.9, "n":3, "a":"a1", "b":"b1", "c":"c3", "from":1234517151,
+    "to":1234537162000000000, "body":"test", "fa":[1.6,2.9], "na":[1,2], "nw":{"1":1,"2":1}, "lang":"heissz"},
+    "boool":true, "by": 94 }
+]

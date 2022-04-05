@@ -243,6 +243,16 @@ module GroupingBase
     check_query("all(group(a)max(100)each(max(100)each(output(summary()))))", "#{selfdir}/global-max-6.xml", DEFAULT_TIMEOUT, false)
   end
 
+  def querytest_groups_for_default_value
+    check_query("all(group(boool)each(output(count())))", "#{selfdir}/default-values/default-bool-group.json", DEFAULT_TIMEOUT, true, 'json')
+    check_query("all(group(by)each(output(count())))", "#{selfdir}/default-values/default-byte-group.json", DEFAULT_TIMEOUT, true, 'json')
+    check_query("all(group(n)each(output(count())))", "#{selfdir}/default-values/default-int-group.json", DEFAULT_TIMEOUT, true, 'json')
+    check_query("all(group(to)each(output(count())))", "#{selfdir}/default-values/default-long-group.json", DEFAULT_TIMEOUT, true, 'json')
+    check_query("all(group(f)each(output(count())))", "#{selfdir}/default-values/default-float-group.json", DEFAULT_TIMEOUT, true, 'json')
+    check_query("all(group(d)each(output(count())))", "#{selfdir}/default-values/default-double-group.json", DEFAULT_TIMEOUT, true, 'json')
+    check_query("all(group(s)each(output(count())))", "#{selfdir}/default-values/default-string-group.json", DEFAULT_TIMEOUT, true, 'json')
+  end
+
   def check_query_default_max(select, file, default_max_groups, default_max_hits)
     full_query = "/?query=sddocname:test&select=#{select}&streaming.selection=true&hits=0&format=xml&timeout=#{DEFAULT_TIMEOUT}" +
       "&grouping.defaultMaxGroups=#{default_max_groups}&grouping.defaultMaxHits=#{default_max_hits}&groupingSessionCache=false"
@@ -250,8 +260,8 @@ module GroupingBase
   end
 
 
-  def check_query(select, file, timeout=DEFAULT_TIMEOUT, session_cache=true)
-    full_query = "/?query=sddocname:test&select=#{select}&streaming.selection=true&hits=0&format=xml&timeout=#{timeout}" +
+  def check_query(select, file, timeout=DEFAULT_TIMEOUT, session_cache=true, format='xml')
+    full_query = "/?query=sddocname:test&select=#{select}&streaming.selection=true&hits=0&format=#{format}&timeout=#{timeout}" +
       "&groupingSessionCache=#{session_cache}"
     check_fullquery(full_query, file)
   end

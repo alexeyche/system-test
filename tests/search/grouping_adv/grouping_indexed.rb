@@ -84,6 +84,14 @@ class GroupingIndexed < IndexedSearchTest
     querytest_global_max
   end
 
+  def test_groups_for_default_value
+    set_owner("bjorncs")
+    deploy_app(singlenode_streaming_2storage("#{selfdir}/test.sd"))
+    start
+    feed_and_wait_for_docs('test', 2, :file => "#{selfdir}/default-values/docs.json")
+    querytest_groups_for_default_value
+  end
+
   def assert_count_equals(query, count)
     query_url = "/?query=sddocname:test2&nocache&hits=0&format=json&#{query}"
     tree = search(query_url).json
