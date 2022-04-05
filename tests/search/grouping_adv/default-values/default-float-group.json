@@ -1,0 +1,90 @@
+{
+  "root": {
+    "id": "toplevel",
+    "relevance": 1.0,
+    "fields": {
+      "totalCount": 2
+    },
+    "coverage": {
+      "coverage": 100,
+      "documents": 2,
+      "full": true,
+      "nodes": 2,
+      "results": 1,
+      "resultsFull": 1
+    },
+    "children": [
+      {
+        "id": "group:root:0",
+        "relevance": 1.0,
+        "continuation": {
+          "this": ""
+        },
+        "children": [
+          {
+            "id": "grouplist:f",
+            "relevance": 1.0,
+            "label": "f",
+            "children": [
+              {
+                "id": "group:double:3.9000000953674316",
+                "relevance": 4814.61700663273,
+                "value": "3.9000000953674316",
+                "children": [
+                  {
+                    "id": "hitlist:hits",
+                    "relevance": 1.0,
+                    "label": "hits",
+                    "children": [
+                      {
+                        "id": "id:test:test::all-fields",
+                        "relevance": 4814.61700663273,
+                        "source": "search",
+                        "fields": {
+                          "sddocname": "test",
+                          "documentid": "id:test:test::all-fields",
+                          "n": 3,
+                          "a": "a1",
+                          "b": "b1",
+                          "c": "c3",
+                          "from": 1234517151,
+                          "to": 1234537162000000000,
+                          "body": "test",
+                          "boool": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "group:double:NaN",
+                "relevance": "-Infinity",
+                "value": "NaN",
+                "children": [
+                  {
+                    "id": "hitlist:hits",
+                    "relevance": 1.0,
+                    "label": "hits",
+                    "children": [
+                      {
+                        "id": "id:test:test::no-fields",
+                        "relevance": "-Infinity",
+                        "source": "search",
+                        "fields": {
+                          "sddocname": "test",
+                          "documentid": "id:test:test::no-fields",
+                          "boool": false
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
